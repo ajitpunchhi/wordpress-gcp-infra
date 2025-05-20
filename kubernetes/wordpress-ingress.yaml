@@ -1,0 +1,33 @@
+# kubernetes/wordpress-ingress.yaml
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress-ingress
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "wordpress-lb-ip"
+    networking.gke.io/managed-certificates: "wordpress-cert"
+    kubernetes.io/ingress.allow-http: "true"
+spec:
+  rules:
+  - host: www.example.com  # Replace with your actual domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wordpress
+            port:
+              number: 80
+  - host: example.com      # Replace with your actual domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wordpress
+            port:
+              number: 80

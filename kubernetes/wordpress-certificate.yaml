@@ -1,0 +1,10 @@
+# kubernetes/wordpress-certificate.yaml
+
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: wordpress-cert
+spec:
+  domains:
+    - example.com
+    - www.example.com
