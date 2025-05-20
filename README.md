@@ -10,7 +10,8 @@ This repository contains Terraform code to deploy a highly available, production
 
 The architecture uses Google Kubernetes Engine (GKE) as the primary compute platform for WordPress, along with Cloud SQL for MySQL database, Cloud DNS for domain management, global load balancing, and private connectivity between services.
 
-![gke-architecture-diagram](https://github.com/user-attachments/assets/da179ec8-2a5a-42a0-88de-cfea44ab2eb7)
+![wordpress-gcp-architecture](https://github.com/user-attachments/assets/f11570dd-22ee-406f-b906-5942152a24cc)
+
 
 
 ### Key Components
